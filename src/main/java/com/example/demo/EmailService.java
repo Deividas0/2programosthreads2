@@ -50,7 +50,7 @@ public class EmailService {
                 System.out.println(Thread.currentThread().getName() + " Siunčiamas laiškas su ID: " + laiskas.getId() + " gavėjui " + laiskas.getGavejas());
                 sendEmail(laiskas);
                 System.out.println("Laiškas sėkmingai išsiūstas, atnaujinama duombazė su ID: " + laiskas.getId());
-                laiskasRepository.updateIssiusta(laiskas.getId());
+                laiskasRepository.updateIssiusta(laiskas.getGavejas(), laiskas.getTurinys());
 
                 System.out.println("Sekundės pertraukėlė :)");
                 Thread.sleep(3000);

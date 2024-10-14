@@ -8,6 +8,27 @@ public class Laiskas {
     private String turinys;
     private LocalDateTime issiusta;
 
+    public Laiskas(int id, String gavejas, String turinys, LocalDateTime issiusta) {
+        this.id = id;
+        this.gavejas = gavejas;
+        this.turinys = turinys;
+        this.issiusta = issiusta;
+    }
+
+    public Laiskas(String gavejas, String turinys, LocalDateTime issiusta) {
+        this.gavejas = gavejas;
+        this.turinys = turinys;
+        this.issiusta = issiusta;
+    }
+
+    public Laiskas(String gavejas, String turinys) {
+        this.gavejas = gavejas;
+        this.turinys = turinys;
+    }
+
+    public Laiskas() {
+    }
+
     public int getId() {
         return id;
     }

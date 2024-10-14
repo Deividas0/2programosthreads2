@@ -31,12 +31,14 @@ public class LaiskasRepository {
         return emails;
     }
 
-    public void updateIssiusta(int id) throws SQLException {
-        String sql = "UPDATE laiskai SET issiusta = CURRENT_TIMESTAMP WHERE id = ?";
+    public void updateIssiusta(String gavejas, String turinys) throws SQLException {
+        String sql = "INSERT INTO laiskai (gavejas, turinys, issiusta) VALUES (?, ?, CURRENT_TIMESTAMP)";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setInt(1, id);
+            preparedStatement.setString(1, gavejas);
+            preparedStatement.setString(2, turinys);
             preparedStatement.executeUpdate();
         }
     }
+
 }
